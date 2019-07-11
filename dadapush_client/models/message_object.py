@@ -141,6 +141,7 @@ class MessageObject(object):
     def created_at(self):
         """Gets the created_at of this MessageObject.  # noqa: E501
 
+        format: yyyy-MM-dd'T'HH:mm:ss.SSSZ  # noqa: E501
 
         :return: The created_at of this MessageObject.  # noqa: E501
         :rtype: str
@@ -151,6 +152,7 @@ class MessageObject(object):
     def created_at(self, created_at):
         """Sets the created_at of this MessageObject.
 
+        format: yyyy-MM-dd'T'HH:mm:ss.SSSZ  # noqa: E501
 
         :param created_at: The created_at of this MessageObject.  # noqa: E501
         :type: str

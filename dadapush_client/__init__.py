@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 # import apis into sdk package
 from dadapush_client.api.da_da_push_message_api import DaDaPushMessageApi

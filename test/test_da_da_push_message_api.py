@@ -14,8 +14,10 @@
 from __future__ import absolute_import
 
 import unittest
+from pprint import pprint
 
 import dadapush_client
+from dadapush_client import Configuration, Action
 from dadapush_client.api.da_da_push_message_api import DaDaPushMessageApi  # noqa: E501
 from dadapush_client.rest import ApiException
 
@@ -23,8 +25,10 @@ from dadapush_client.rest import ApiException
 class TestDaDaPushMessageApi(unittest.TestCase):
     """DaDaPushMessageApi unit test stubs"""
 
+    x_channel_token = 'ct4OXfKOnGi0EdR1kbOrNHt8ehSq71SrmdTMOwZ26NlHToVeeU9u'  # str | see: https://www.dadapush.com/channel/list (optional)
+
     def setUp(self):
-        self.api = dadapush_client.api.da_da_push_message_api.DaDaPushMessageApi()  # noqa: E501
+        self.api = dadapush_client.DaDaPushMessageApi(dadapush_client.ApiClient(Configuration(host="http://127.0.0.1:8080")))  # noqa: E501
 
     def tearDown(self):
         pass
@@ -34,28 +38,58 @@ class TestDaDaPushMessageApi(unittest.TestCase):
 
         push Message to a Channel  # noqa: E501
         """
-        pass
+        actions=[Action(type="link", name="view", url="https://www.dadapush.com/")]
+        body = dadapush_client.MessagePushRequest(title="good news",
+                                                  content="Good News! DaDaPush releasing new version",
+                                                  need_push=True,
+                                                  actions=actions
+                                                  )  # MessagePushRequest | body
+
+
+        try:
+            # push Message to a Channel
+            api_response = self.api.create_message(body, x_channel_token=self.x_channel_token)
+            pprint(api_response)
+        except ApiException as e:
+            pprint(e)
+
 
     def test_delete_message(self):
         """Test case for delete_message
 
         delete a Channel Message  # noqa: E501
         """
-        pass
+        try:
+            # push Message to a Channel
+            api_response = self.api.delete_message(message_id=227822, x_channel_token=self.x_channel_token)
+            pprint(api_response)
+        except ApiException as e:
+            pprint(e)
+
 
     def test_get_message(self):
         """Test case for get_message
 
         get a Channel Message  # noqa: E501
         """
-        pass
+        try:
+            # push Message to a Channel
+            api_response = self.api.get_message(message_id=227822, x_channel_token=self.x_channel_token)
+            pprint(api_response)
+        except ApiException as e:
+            pprint(e)
 
     def test_get_messages(self):
         """Test case for get_messages
 
         get Message List  # noqa: E501
         """
-        pass
+        try:
+            # push Message to a Channel
+            api_response = self.api.get_messages(page=1, page_size=10, x_channel_token=self.x_channel_token)
+            pprint(api_response)
+        except ApiException as e:
+            pprint(e)
 
 
 if __name__ == '__main__':

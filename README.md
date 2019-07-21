@@ -15,9 +15,15 @@ For more information, please visit [https://www.dadapush.com](https://www.dadapu
 Python 2.7 and 3.4+
 
 ## Installation & Usage
-### pip install
 
-If the python package is hosted on Github, you can install directly from Github
+### install from [pypi](https://pypi.org/project/dadapush-client/)
+
+```bash
+pip install dadapush-client
+```
+
+
+### install directly from Github
 
 ```sh
 pip install git+https://github.com/dadapush/dadapush-python-client.git
@@ -29,9 +35,7 @@ Then import the package:
 import dadapush_client 
 ```
 
-### Setuptools
-
-Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
+### Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
 
 ```sh
 python setup.py install --user
@@ -94,9 +98,6 @@ Class | Method | HTTP request | Description
  - [ResultOfPageResponseOfMessageObject](docs/ResultOfPageResponseOfMessageObject.md)
 
 
-## Documentation For Authorization
-
- All endpoints do not require authorization.
 
 ## Author
 

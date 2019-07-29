@@ -30,14 +30,12 @@ setup(
     version=VERSION,
     description="DaDaPush Public API",
     author_email="contacts@dadapush.com",
-    url="",
+    url="https://github.com/dadapush/dadapush-python-client",
     keywords=["DaDaPush Public API"],
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
-    DaDaPush: Real-time Notifications App\n
-    Send real-time notifications through our API without coding and maintaining your own app for iOS or Android devices.\n # noqa: E501
-    https://www.dadapush.com/
+    DaDaPush: Real-time Notifications App. Send real-time notifications through our API without coding and maintaining your own app for iOS or Android devices. # noqa: E501
     """
 )
